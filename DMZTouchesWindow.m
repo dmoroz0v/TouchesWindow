@@ -1,3 +1,10 @@
+//
+//  DMZTouchesWindow.m
+//
+//  Created by dmoroz0v on 02/11/16.
+//  Copyright © 2016 DMZ. All rights reserved.
+//
+
 #import "DMZTouchesWindow.h"
 
 @interface DMZTouchView : NSObject
