@@ -101,7 +101,7 @@
 		view.layer.cornerRadius = 20;
 		view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.25];
 		view.center = [touch locationInView:self];
-		view.layer.zPosition = CGFLOAT_MAX;
+		view.layer.zPosition = FLT_MAX;
 
 		touchView.view = view;
 
