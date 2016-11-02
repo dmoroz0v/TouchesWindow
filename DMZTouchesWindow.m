@@ -50,14 +50,14 @@
 		NSMutableSet *beganTouches = [NSMutableSet set];
 		NSMutableSet *movedTouches = [NSMutableSet set];
 		NSMutableSet *endedTouches = [NSMutableSet set];
-		
+
 		for (UITouch *touch in event.allTouches)
 		{
 			if (touch.phase == UITouchPhaseBegan)
 			{
 				[beganTouches addObject:touch];
 			}
-			else if (touch.phase == UITouchPhaseMoved)
+			else if (touch.phase == UITouchPhaseMoved || touch.phase == UITouchPhaseStationary)
 			{
 				[movedTouches addObject:touch];
 			}
@@ -87,6 +87,7 @@
 
 	return nil;
 }
+	
 - (void)dmz_touchesBegan:(NSSet<UITouch *> *)touches
 {
 	for (UITouch *touch in touches)
