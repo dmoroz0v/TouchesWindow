@@ -13,32 +13,32 @@
 
 @interface DMZTouchesWindow ()
 
-@property (nonatomic, strong) NSMutableArray<DMZTouchView *> *views;
+@property (nonatomic, strong) NSMutableArray<DMZTouchView *> *dmz_views;
 
 @end
 
 @implementation DMZTouchesWindow
 
-- (void)setEnabled:(BOOL)enabled
+- (void)dmz_setEnabled:(BOOL)enabled
 {
-	if (enabled && self.views == nil)
+	if (enabled && self.dmz_views == nil)
 	{
-		self.views = [[NSMutableArray alloc] init];
+		self.dmz_views = [[NSMutableArray alloc] init];
 	}
-	else if (!enabled && self.views != nil)
+	else if (!enabled && self.dmz_views != nil)
 	{
-		for (DMZTouchView *touchView in self.views)
+		for (DMZTouchView *touchView in self.dmz_views)
 		{
 			[touchView.view removeFromSuperview];
 		}
 
-		self.views = nil;
+		self.dmz_views = nil;
 	}
 }
 
 - (void)sendEvent:(UIEvent *)event
 {
-	if (self.views != nil)
+	if (self.dmz_views != nil)
 	{
 		NSMutableSet *beganTouches = [NSMutableSet set];
 		NSMutableSet *movedTouches = [NSMutableSet set];
@@ -60,17 +60,17 @@
 			}
 		}
 
-		[self touchesBegan:[beganTouches copy]];
-		[self touchesMoved:[movedTouches copy]];
-		[self touchesEnded:[endedTouches copy]];
+		[self dmz_touchesBegan:[beganTouches copy]];
+		[self dmz_touchesMoved:[movedTouches copy]];
+		[self dmz_touchesEnded:[endedTouches copy]];
 	}
 
 	[super sendEvent:event];
 }
 
-- (DMZTouchView *)touchViewWithTouch:(UITouch *)touch
+- (DMZTouchView *)dmz_touchViewWithTouch:(UITouch *)touch
 {
-	for (DMZTouchView *touchView in self.views)
+	for (DMZTouchView *touchView in self.dmz_views)
 	{
 		if (touchView.touch == touch)
 		{
@@ -80,7 +80,7 @@
 
 	return nil;
 }
-- (void)touchesBegan:(NSSet<UITouch *> *)touches
+- (void)dmz_touchesBegan:(NSSet<UITouch *> *)touches
 {
 	for (UITouch *touch in touches)
 	{
@@ -97,28 +97,28 @@
 
 		touchView.view = view;
 
-		[self.views addObject:touchView];
+		[self.dmz_views addObject:touchView];
 
 		[self addSubview:view];
 	}
 }
 
-- (void)touchesMoved:(NSSet<UITouch *> *)touches
+- (void)dmz_touchesMoved:(NSSet<UITouch *> *)touches
 {
 	for (UITouch *touch in touches)
 	{
-		DMZTouchView *touchView = [self touchViewWithTouch:touch];
+		DMZTouchView *touchView = [self dmz_touchViewWithTouch:touch];
 		touchView.view.center = [touchView.touch locationInView:self];
 	}
 }
 
-- (void)touchesEnded:(NSSet<UITouch *> *)touches
+- (void)dmz_touchesEnded:(NSSet<UITouch *> *)touches
 {
 	for (UITouch *touch in touches)
 	{
-		DMZTouchView *touchView = [self touchViewWithTouch:touch];
+		DMZTouchView *touchView = [self dmz_touchViewWithTouch:touch];
 		[touchView.view removeFromSuperview];
-		[self.views removeObject:touchView];
+		[self.dmz_views removeObject:touchView];
 	}
 }
 

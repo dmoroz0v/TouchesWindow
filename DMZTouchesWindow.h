@@ -1,5 +1,5 @@
 @interface DMZTouchesWindow : UIWindow
 
-- (void)setEnabled:(BOOL)enabled;
+- (void)dmz_setEnabled:(BOOL)enabled;
 
 @end
