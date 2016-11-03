@@ -4,7 +4,7 @@ Show touch indicators for your iOS app
 # How to use
 ```
 DMZTouchesWindow *window = [[DMZTouchesWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-[window dmz_setEnabled:YES];
+window.dmz_touchesEnabled = YES;
 ...
 ```
 
