@@ -20,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	DMZTouchesWindow *window = [[DMZTouchesWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-	[window dmz_setEnabled:YES];
+	window.dmz_touchesEnabled = YES;
 
 	self.window = window;
 	self.window.rootViewController = [[ViewController alloc] init];

@@ -7,36 +7,66 @@
 
 #import "DMZTouchesWindow.h"
 
-@interface DMZTouchView : NSObject
+@interface DMZTouchEntity : NSObject
 
 @property (nonatomic, strong) UITouch *touch;
 @property (nonatomic, strong) UIView *view;
 
 @end
 
-@implementation DMZTouchView
+@implementation DMZTouchEntity
 
 @end
 
 @interface DMZTouchesWindow ()
 
-@property (nonatomic, strong) NSMutableArray<DMZTouchView *> *dmz_views;
+@property (nonatomic, strong) NSMutableArray<DMZTouchEntity *> *dmz_views;
 
 @end
 
 @implementation DMZTouchesWindow
 
-- (void)dmz_setEnabled:(BOOL)enabled
+- (instancetype)initWithFrame:(CGRect)frame
 {
-	if (enabled && self.dmz_views == nil)
+	self = [super initWithFrame:frame];
+
+	[self setupDefaults];
+
+	return self;
+}
+
+- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+	self = [super initWithCoder:aDecoder];
+	if (self == nil)
+	{
+		return nil;
+	}
+
+	[self setupDefaults];
+
+	return self;
+}
+
+- (void)setupDefaults
+{
+	_dmz_touchesRadius = 20;
+	_dmz_touchesColor = [UIColor colorWithWhite:0 alpha:0.5];
+}
+
+-(void)setDmz_touchesEnabled:(CGFloat)dmz_touchesEnabled
+{
+	_dmz_touchesEnabled = dmz_touchesEnabled;
+
+	if (_dmz_touchesEnabled && self.dmz_views == nil)
 	{
 		self.dmz_views = [[NSMutableArray alloc] init];
 	}
-	else if (!enabled && self.dmz_views != nil)
+	else if (!_dmz_touchesEnabled && self.dmz_views != nil)
 	{
-		for (DMZTouchView *touchView in self.dmz_views)
+		for (DMZTouchEntity *touchEntity in self.dmz_views)
 		{
-			[touchView.view removeFromSuperview];
+			[touchEntity.view removeFromSuperview];
 		}
 
 		self.dmz_views = nil;
@@ -75,13 +105,13 @@
 	[super sendEvent:event];
 }
 
-- (DMZTouchView *)dmz_touchViewWithTouch:(UITouch *)touch
+- (DMZTouchEntity *)dmz_touchEntityWithTouch:(UITouch *)touch
 {
-	for (DMZTouchView *touchView in self.dmz_views)
+	for (DMZTouchEntity *touchEntity in self.dmz_views)
 	{
-		if (touchView.touch == touch)
+		if (touchEntity.touch == touch)
 		{
-			return touchView;
+			return touchEntity;
 		}
 	}
 
@@ -92,20 +122,20 @@
 {
 	for (UITouch *touch in touches)
 	{
-		DMZTouchView *touchView = [[DMZTouchView alloc] init];
-		touchView.touch = touch;
+		DMZTouchEntity *touchEntity = [[DMZTouchEntity alloc] init];
+		touchEntity.touch = touch;
 
 		UIView *view = [[UIView alloc] init];
-		view.frame = CGRectMake(0, 0, 40, 40);
+		view.frame = CGRectMake(0, 0, self.dmz_touchesRadius * 2, self.dmz_touchesRadius * 2);
 		view.layer.masksToBounds = YES;
-		view.layer.cornerRadius = 20;
-		view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.25];
+		view.layer.cornerRadius = self.dmz_touchesRadius;
+		view.backgroundColor = self.dmz_touchesColor;
 		view.center = [touch locationInView:self];
 		view.layer.zPosition = FLT_MAX;
 
-		touchView.view = view;
+		touchEntity.view = view;
 
-		[self.dmz_views addObject:touchView];
+		[self.dmz_views addObject:touchEntity];
 
 		[self addSubview:view];
 	}
@@ -115,8 +145,8 @@
 {
 	for (UITouch *touch in touches)
 	{
-		DMZTouchView *touchView = [self dmz_touchViewWithTouch:touch];
-		touchView.view.center = [touchView.touch locationInView:self];
+		DMZTouchEntity *touchEntity = [self dmz_touchEntityWithTouch:touch];
+		touchEntity.view.center = [touchEntity.touch locationInView:self];
 	}
 }
 
@@ -124,9 +154,9 @@
 {
 	for (UITouch *touch in touches)
 	{
-		DMZTouchView *touchView = [self dmz_touchViewWithTouch:touch];
-		[touchView.view removeFromSuperview];
-		[self.dmz_views removeObject:touchView];
+		DMZTouchEntity *touchEntity = [self dmz_touchEntityWithTouch:touch];
+		[touchEntity.view removeFromSuperview];
+		[self.dmz_views removeObject:touchEntity];
 	}
 }
 
