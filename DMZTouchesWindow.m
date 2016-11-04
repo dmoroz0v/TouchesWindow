@@ -208,7 +208,7 @@
 	for (UITouch *touch in touches)
 	{
 		CGFloat forceRadius = 0;
-		if (!self.dmz_touchesForceDisabled)
+		if (!self.dmz_touchesForceDisabled && [self forceTouchAvailable])
 		{
 			forceRadius = (touch.force - 0.5) / (touch.maximumPossibleForce - 0.5);
 			forceRadius = MAX(0, forceRadius);
@@ -228,6 +228,16 @@
 		[touchEntity.view removeFromSuperview];
 		[_dmz_views removeObject:touchEntity];
 	}
+}
+
+- (BOOL)forceTouchAvailable
+{
+	if (![self.traitCollection respondsToSelector:@selector(forceTouchCapability)])
+	{
+		return NO;
+	}
+
+	return (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable);
 }
 
 @end
