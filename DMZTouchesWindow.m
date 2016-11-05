@@ -11,8 +11,8 @@
 
 @interface DMZTouchView : UIView
 
-- (void)setCoreCollor:(UIColor *)coreColor;
-- (void)setForceCollor:(UIColor *)forceColor;
+- (void)setCoreColor:(UIColor *)coreColor;
+- (void)setForceColor:(UIColor *)forceColor;
 - (void)setForceRadius:(CGFloat)forceRadius;
 
 @end
@@ -46,12 +46,12 @@
 	return self;
 }
 
-- (void)setCoreCollor:(UIColor *)coreColor
+- (void)setCoreColor:(UIColor *)coreColor
 {
 	_core.backgroundColor = coreColor;
 }
 
-- (void)setForceCollor:(UIColor *)forceColor
+- (void)setForceColor:(UIColor *)forceColor
 {
 	_force.backgroundColor = forceColor;
 }
@@ -112,7 +112,7 @@
 	_dmz_touchesColor = [UIColor colorWithWhite:0 alpha:0.5];
 }
 
--(void)setDmz_touchesEnabled:(CGFloat)dmz_touchesEnabled
+-(void)setDmz_touchesEnabled:(BOOL)dmz_touchesEnabled
 {
 	_dmz_touchesEnabled = dmz_touchesEnabled;
 
@@ -189,8 +189,8 @@
 		}
 
 		DMZTouchView *view = [[DMZTouchView alloc] initWithRadius:self.dmz_touchesRadius];
-		[view setCoreCollor:self.dmz_touchesColor];
-		[view setForceCollor:forceColor];
+		[view setCoreColor:self.dmz_touchesColor];
+		[view setForceColor:forceColor];
 		view.layer.zPosition = FLT_MAX;
 
 		DMZTouchEntity *touchEntity = [[DMZTouchEntity alloc] init];
