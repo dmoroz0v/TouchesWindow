@@ -1,5 +1,5 @@
 # TouchesWindow
-Show touch indicators and force touch indicators for your iOS app
+Show touch and force-touch indicators for your iOS app. Have swift and obj-c versions
 
 # How to use in swift
 1. Copy and paste DMZTouchesWindow.swift to your project
