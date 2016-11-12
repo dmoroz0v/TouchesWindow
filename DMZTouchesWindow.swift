@@ -118,12 +118,13 @@ open class DMZTouchesWindow : UIWindow
 			if !dmz_touchesForceDisabled && dmz_forceTouchAvailable
 			{
 				forceRadius = (touch.force - 0.5) / (touch.maximumPossibleForce - 0.5)
-				//forceRadius = MAX(0, forceRadius);
+				forceRadius = max(0, forceRadius);
 			}
 
 			let touchEntity = dmz_touchEntity(forTouch:touch)!
+			touchEntity.hasBeenMoved = (touchEntity.hasBeenMoved || (touch.force == 0 && touch.phase == .moved))
 			touchEntity.view.center = touchEntity.touch.location(in: self)
-			touchEntity.view.setForceRadius(forceRadius)
+			touchEntity.view.setForceRadius(touchEntity.hasBeenMoved == false ? forceRadius : 0)
 		}
 	}
 
@@ -213,10 +214,16 @@ fileprivate class DMZTouchView : UIView
 
 // MARK: DMZTouchEntity
 
-fileprivate struct DMZTouchEntity: Hashable
+fileprivate class DMZTouchEntity: Hashable
 {
 	let touch: UITouch
 	let view: DMZTouchView
+	var hasBeenMoved: Bool = false
+
+	init(touch: UITouch, view: DMZTouchView) {
+		self.touch = touch
+		self.view = view
+	}
 
 	fileprivate var hashValue: Int
 	{

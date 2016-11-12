@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9B96A8D1DD7546E009E0E3D /* DMZTouchesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B96A8C1DD7546E009E0E3D /* DMZTouchesWindow.swift */; };
 		F9E421E61DCE1F0000EB8A35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E421E51DCE1F0000EB8A35 /* AppDelegate.swift */; };
 		F9E421E81DCE1F0000EB8A35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E421E71DCE1F0000EB8A35 /* ViewController.swift */; };
 		F9E421ED1DCE1F0000EB8A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E421EC1DCE1F0000EB8A35 /* Assets.xcassets */; };
 		F9E421F01DCE1F0000EB8A35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E421EE1DCE1F0000EB8A35 /* LaunchScreen.storyboard */; };
-		F9E421F81DCE214F00EB8A35 /* DMZTouchesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E421F71DCE214F00EB8A35 /* DMZTouchesWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F9B96A8C1DD7546E009E0E3D /* DMZTouchesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMZTouchesWindow.swift; path = ../../../DMZTouchesWindow.swift; sourceTree = "<group>"; };
 		F9E421E21DCE1F0000EB8A35 /* DMZTouchesWindowSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMZTouchesWindowSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E421E51DCE1F0000EB8A35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9E421E71DCE1F0000EB8A35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F9E421EC1DCE1F0000EB8A35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9E421EF1DCE1F0000EB8A35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9E421F11DCE1F0000EB8A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9E421F71DCE214F00EB8A35 /* DMZTouchesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMZTouchesWindow.swift; path = ../../../../DMZTouchesWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +54,12 @@
 		F9E421E41DCE1F0000EB8A35 /* DMZTouchesWindowSample */ = {
 			isa = PBXGroup;
 			children = (
+				F9B96A8C1DD7546E009E0E3D /* DMZTouchesWindow.swift */,
 				F9E421E51DCE1F0000EB8A35 /* AppDelegate.swift */,
 				F9E421E71DCE1F0000EB8A35 /* ViewController.swift */,
 				F9E421EC1DCE1F0000EB8A35 /* Assets.xcassets */,
 				F9E421EE1DCE1F0000EB8A35 /* LaunchScreen.storyboard */,
 				F9E421F11DCE1F0000EB8A35 /* Info.plist */,
-				F9E421F71DCE214F00EB8A35 /* DMZTouchesWindow.swift */,
 			);
 			path = DMZTouchesWindowSample;
 			sourceTree = "<group>";
@@ -138,7 +138,7 @@
 			files = (
 				F9E421E81DCE1F0000EB8A35 /* ViewController.swift in Sources */,
 				F9E421E61DCE1F0000EB8A35 /* AppDelegate.swift in Sources */,
-				F9E421F81DCE214F00EB8A35 /* DMZTouchesWindow.swift in Sources */,
+				F9B96A8D1DD7546E009E0E3D /* DMZTouchesWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +294,7 @@
 				F9E421F61DCE1F0000EB8A35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

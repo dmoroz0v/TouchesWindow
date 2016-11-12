@@ -68,6 +68,7 @@
 
 @interface DMZTouchEntity : NSObject
 
+@property (nonatomic, assign) BOOL hasBeenMoved;
 @property (nonatomic, strong) UITouch *touch;
 @property (nonatomic, strong) DMZTouchView *view;
 
@@ -156,7 +157,7 @@
 		}
 
 		[self dmz_touchesBegan:[beganTouches copy]];
-		[self dmz_touchesMoved:[event.allTouches copy]];
+		[self dmz_touchesUpdated:[event.allTouches copy]];
 		[self dmz_touchesEnded:[endedTouches copy]];
 	}
 
@@ -203,7 +204,7 @@
 	}
 }
 
-- (void)dmz_touchesMoved:(NSSet<UITouch *> *)touches
+- (void)dmz_touchesUpdated:(NSSet<UITouch *> *)touches
 {
 	for (UITouch *touch in touches)
 	{
@@ -215,8 +216,9 @@
 		}
 
 		DMZTouchEntity *touchEntity = [self dmz_touchEntityWithTouch:touch];
+		touchEntity.hasBeenMoved = (touchEntity.hasBeenMoved || (touch.force == 0 && touch.phase == UITouchPhaseMoved));
 		touchEntity.view.center = [touchEntity.touch locationInView:self];
-		[touchEntity.view setForceRadius:forceRadius];
+		[touchEntity.view setForceRadius:(!touchEntity.hasBeenMoved ? forceRadius : 0)];
 	}
 }
 
