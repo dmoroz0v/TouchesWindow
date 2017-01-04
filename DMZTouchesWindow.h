@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat dmz_touchesRadius;
 
 // Determines visible touch circles. YES - touch circles are visible.
-// NO - touch circles are not visible. Defailt is NO
+// NO - touch circles are not visible. Default is NO
 @property (nonatomic, assign) BOOL dmz_touchesEnabled;
 
 // Color of touch force circles. Default is nil.
@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) UIColor *dmz_touchesForceColor;
 
 // Determines visible touch force circles. YES - touch force circles are no visible.
-// NO - touch force circles are visible. Defailt is NO
+// NO - touch force circles are visible. Default is NO
 @property (nonatomic, assign) BOOL dmz_touchesForceDisabled;
 
 @end

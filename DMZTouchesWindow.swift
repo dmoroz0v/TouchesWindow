@@ -19,7 +19,7 @@ open class DMZTouchesWindow : UIWindow
 	public var dmz_touchesRadius: CGFloat = 20.0
 
 	// Determines visible touch circles. true - touch circles are visible.
-	// false - touch circles are not visible. Defailt is false
+	// false - touch circles are not visible. Default is false
 	public var dmz_touchesEnabled: Bool = false {
 		didSet {
 			if dmz_touchesEnabled && dmz_views == nil
@@ -39,7 +39,7 @@ open class DMZTouchesWindow : UIWindow
 	public var dmz_touchesForceColor: UIColor?
 
 	// Determines visible touch force circles. true - touch force circles are no visible.
-	// false - touch force circles are visible. Defailt is false
+	// false - touch force circles are visible. Default is false
 	public var dmz_touchesForceDisabled: Bool = false
 
 	private var dmz_views: Set<DMZTouchEntity>!
