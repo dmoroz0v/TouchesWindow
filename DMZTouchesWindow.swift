@@ -100,13 +100,13 @@ open class DMZTouchesWindow : UIWindow
 			let view = DMZTouchView(radius: dmz_touchesRadius)
 			view.setCoreColor(dmz_touchesColor)
 			view.setForceColor(forceColor!)
-			view.layer.zPosition = CGFloat(FLT_MAX);
+			view.layer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
 
 			let touchEntity = DMZTouchEntity(touch: touch, view: view)
 
 			dmz_views.insert(touchEntity)
 
-			addSubview(view);
+			addSubview(view)
 		}
 	}
 
@@ -114,11 +114,11 @@ open class DMZTouchesWindow : UIWindow
 	{
 		for touch in touches
 		{
-			var forceRadius: CGFloat = 0;
+			var forceRadius: CGFloat = 0
 			if !dmz_touchesForceDisabled && dmz_forceTouchAvailable
 			{
 				forceRadius = (touch.force - 0.5) / (touch.maximumPossibleForce - 0.5)
-				forceRadius = max(0, forceRadius);
+				forceRadius = max(0, forceRadius)
 			}
 
 			let touchEntity = dmz_touchEntity(forTouch:touch)!
