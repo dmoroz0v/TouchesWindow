@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F9B96A8D1DD7546E009E0E3D /* DMZTouchesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B96A8C1DD7546E009E0E3D /* DMZTouchesWindow.swift */; };
 		F9E421E61DCE1F0000EB8A35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E421E51DCE1F0000EB8A35 /* AppDelegate.swift */; };
 		F9E421E81DCE1F0000EB8A35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E421E71DCE1F0000EB8A35 /* ViewController.swift */; };
 		F9E421ED1DCE1F0000EB8A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E421EC1DCE1F0000EB8A35 /* Assets.xcassets */; };
@@ -15,7 +14,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F9B96A8C1DD7546E009E0E3D /* DMZTouchesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMZTouchesWindow.swift; path = ../../../DMZTouchesWindow.swift; sourceTree = "<group>"; };
 		F9E421E21DCE1F0000EB8A35 /* DMZTouchesWindowSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMZTouchesWindowSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E421E51DCE1F0000EB8A35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9E421E71DCE1F0000EB8A35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +52,6 @@
 		F9E421E41DCE1F0000EB8A35 /* DMZTouchesWindowSample */ = {
 			isa = PBXGroup;
 			children = (
-				F9B96A8C1DD7546E009E0E3D /* DMZTouchesWindow.swift */,
 				F9E421E51DCE1F0000EB8A35 /* AppDelegate.swift */,
 				F9E421E71DCE1F0000EB8A35 /* ViewController.swift */,
 				F9E421EC1DCE1F0000EB8A35 /* Assets.xcassets */,
@@ -80,6 +77,8 @@
 			dependencies = (
 			);
 			name = DMZTouchesWindowSample;
+			packageProductDependencies = (
+			);
 			productName = DMZTouchesWindowSample;
 			productReference = F9E421E21DCE1F0000EB8A35 /* DMZTouchesWindowSample.app */;
 			productType = "com.apple.product-type.application";
@@ -91,25 +90,28 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = DMZ;
 				TargetAttributes = {
 					F9E421E11DCE1F0000EB8A35 = {
 						CreatedOnToolsVersion = 8.1;
-						LastSwiftMigration = 0910;
+						DevelopmentTeam = AN9S2DSXZS;
+						LastSwiftMigration = 1320;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = F9E421DD1DCE1F0000EB8A35 /* Build configuration list for PBXProject "DMZTouchesWindowSample" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
 			mainGroup = F9E421D91DCE1F0000EB8A35;
+			packageReferences = (
+			);
 			productRefGroup = F9E421E31DCE1F0000EB8A35 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +140,6 @@
 			files = (
 				F9E421E81DCE1F0000EB8A35 /* ViewController.swift in Sources */,
 				F9E421E61DCE1F0000EB8A35 /* AppDelegate.swift in Sources */,
-				F9B96A8D1DD7546E009E0E3D /* DMZTouchesWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +170,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -176,8 +178,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -203,7 +207,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -226,6 +230,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -233,8 +238,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -254,7 +261,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -267,13 +274,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AN9S2DSXZS;
 				INFOPLIST_FILE = DMZTouchesWindowSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dmz.DMZTouchesWindowSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmz.DMZTouchesWindowSample2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -281,13 +288,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AN9S2DSXZS;
 				INFOPLIST_FILE = DMZTouchesWindowSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dmz.DMZTouchesWindowSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmz.DMZTouchesWindowSample2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
