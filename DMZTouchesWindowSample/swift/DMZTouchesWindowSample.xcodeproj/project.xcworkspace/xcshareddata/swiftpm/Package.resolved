@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DMZTouchesWindow",
+        "repositoryURL": "https://github.com/dmoroz0v/TouchesWindow.git",
+        "state": {
+          "branch": "master",
+          "revision": "adc6b53fb09217f0265343b86f912c072e00c5f3",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
